@@ -1,0 +1,72 @@
+<!--<style>-->
+<!--  [nz-radio] {-->
+<!--    display: block;-->
+<!--    height: 32px;-->
+<!--    line-height: 32px;-->
+<!--  }-->
+<!--  input {-->
+<!--    width: 100px;-->
+<!--    margin-left: 10px;-->
+<!--  }-->
+
+<!--</style>-->
+<!--<div class="purple-square-container">-->
+<!--  <div class="purple-square">-->
+<!--    <div style="margin-top: 10px">-->
+<!--      <div>-->
+<!--        <img src="{{data.client.appLogo}}" height="70px" alt="">-->
+<!--      </div>-->
+<!--      <div> <p style="font-weight: bolder">{{data.client.appName}} </p>wants to access your Google Account</div>-->
+<!--      <div>-->
+<!--        <img src="https://banner2.cleanpng.com/20171216/232/email-png-5a358fef0f1582.4768819215134596950618.jpg" height="10px" alt=""> {{username}}-->
+<!--      </div>-->
+<!--      <div> <p style="font-weight: bolder">{{data.client.appName}}</p>want to access</div>-->
+<!--      <div>-->
+<!--        <nz-radio-group [(ngModel)]="radioValue" *ngFor="let scope of data.scope">-->
+<!--          <label nz-radio  nzValue="{{scope.name}}">{{scope.name}}</label>-->
+<!--        </nz-radio-group>-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <button class="ant-btn ant-btn-loading-icon" (click)="getAuthCode()" style="margin-top: 10px">Allow</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<section class="vh-100" style="background-color: #508bfc;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+            <div>
+              <img src="{{data.client.appLogo}}" height="100px" alt="">
+            </div>
+
+            <div class="form-outline mb-4">
+              <h3 style="color: #508bfc">{{data.client.appName}}<span style="color: black"> wants to access your Google Account</span></h3>
+            </div>
+
+            <div class="form-outline mb-4">
+             <h6> This will allow <span style="color: #1890ff" >{{data.client.appName}}</span> to :</h6>
+            </div>
+            <div class="form-outline mb-4">
+              <nz-radio-group [(ngModel)]="radioValue" *ngFor="let scope of data.scope">-->
+                          <label nz-radio  nzValue="{{scope.name}}">{{scope.name}}</label>
+                        </nz-radio-group>
+            </div>
+            <div class="form-outline mb-4" style="font-weight: bolder">
+               <h6>Make sure you trust Google OAuth 2.0 {{data.client.appName}}</h6>
+            </div>
+            <div class="form-outline mb-4">
+              You may be sharing sentitive info with this site or app. Learn about how Google OAuth 2.0 {{data.client.appName}}
+              will handle your data  by reviewing its terms of service and privacy policies. You can always see or remove access in your <span>Google Account</span>
+            </div>
+            <hr class="my-4">
+            <button class="btn btn-lg btn-block btn-primary" (click)="getAuthCode()"  style="background-color: #dd4b39;"
+                    type="submit"><i class="fab fa-google me-2"></i>Allow</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
